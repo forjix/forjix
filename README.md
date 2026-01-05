@@ -52,4 +52,4 @@ $app->run();
 
 ## License
 
-MIT
+GPL-3.0
