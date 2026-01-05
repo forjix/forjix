@@ -2,7 +2,7 @@
     "name": "forjix/forjix",
     "description": "A lightweight, modular PHP framework",
     "type": "library",
-    "license": "MIT",
+    "license": "GPL-3.0-or-later",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
