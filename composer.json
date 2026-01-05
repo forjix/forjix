@@ -1,0 +1,58 @@
+{
+    "name": "forjix/forjix",
+    "description": "A lightweight, modular PHP framework",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^8.2",
+        "forjix/support": "self.version",
+        "forjix/core": "self.version",
+        "forjix/http": "self.version",
+        "forjix/database": "self.version",
+        "forjix/orm": "self.version",
+        "forjix/view": "self.version",
+        "forjix/console": "self.version",
+        "forjix/validation": "self.version"
+    },
+    "autoload": {
+        "psr-4": {
+            "Forjix\\": "packages/"
+        },
+        "files": [
+            "packages/support/src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Forjix\\Tests\\": "tests/"
+        }
+    },
+    "repositories": [
+        {"type": "path", "url": "packages/support"},
+        {"type": "path", "url": "packages/core"},
+        {"type": "path", "url": "packages/http"},
+        {"type": "path", "url": "packages/database"},
+        {"type": "path", "url": "packages/orm"},
+        {"type": "path", "url": "packages/view"},
+        {"type": "path", "url": "packages/console"},
+        {"type": "path", "url": "packages/validation"}
+    ],
+    "replace": {
+        "forjix/support": "self.version",
+        "forjix/core": "self.version",
+        "forjix/http": "self.version",
+        "forjix/database": "self.version",
+        "forjix/orm": "self.version",
+        "forjix/view": "self.version",
+        "forjix/console": "self.version",
+        "forjix/validation": "self.version"
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
