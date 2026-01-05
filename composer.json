@@ -2,6 +2,7 @@
     "name": "forjix/forjix",
     "description": "A lightweight, modular PHP framework",
     "type": "library",
+    "version": "0.1.0",
     "license": "GPL-3.0-or-later",
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -48,6 +49,9 @@
         "forjix/view": "self.version",
         "forjix/console": "self.version",
         "forjix/validation": "self.version"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
     },
     "scripts": {
         "test": "phpunit"
