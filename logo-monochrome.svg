@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Monochrome version for dark backgrounds or single-color use -->
+
+  <!-- F made of connected blocks -->
+  <!-- Top row -->
+  <rect x="8" y="8" width="14" height="14" rx="2" fill="currentColor"/>
+  <rect x="25" y="8" width="14" height="14" rx="2" fill="currentColor"/>
+  <rect x="42" y="8" width="14" height="14" rx="2" fill="currentColor"/>
+
+  <!-- Middle row -->
+  <rect x="8" y="25" width="14" height="14" rx="2" fill="currentColor"/>
+  <rect x="25" y="25" width="14" height="14" rx="2" fill="currentColor"/>
+
+  <!-- Bottom -->
+  <rect x="8" y="42" width="14" height="14" rx="2" fill="currentColor"/>
+
+  <!-- Forge spark -->
+  <path d="M48,38 L52,30 L54,34 L60,22 L56,32 L58,30 L52,44 Z"
+        fill="currentColor" opacity="0.7"/>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <!-- Gradient for modern tech feel -->
+    <linearGradient id="forjixGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="50%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+
+    <!-- Shadow filter for depth -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Background circle (optional, can be removed for transparent) -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="url(#forjixGrad)" stroke-width="3" opacity="0.2"/>
+
+  <!-- Main logo: Stylized "F" made of 8 connected modules representing the 8 packages -->
+  <g filter="url(#shadow)">
+    <!-- Top horizontal bar - 3 connected blocks -->
+    <rect x="45" y="40" width="28" height="28" rx="4" fill="url(#forjixGrad)"/>
+    <rect x="77" y="40" width="28" height="28" rx="4" fill="url(#forjixGrad)"/>
+    <rect x="109" y="40" width="28" height="28" rx="4" fill="url(#forjixGrad)"/>
+
+    <!-- Middle horizontal bar - 2 connected blocks -->
+    <rect x="45" y="86" width="28" height="28" rx="4" fill="url(#forjixGrad)"/>
+    <rect x="77" y="86" width="28" height="28" rx="4" fill="url(#forjixGrad)"/>
+
+    <!-- Vertical stem - 3 blocks total (top already counted, middle already counted) -->
+    <rect x="45" y="132" width="28" height="28" rx="4" fill="url(#forjixGrad)"/>
+
+    <!-- Connection lines between modules -->
+    <line x1="73" y1="54" x2="77" y2="54" stroke="url(#forjixGrad)" stroke-width="4"/>
+    <line x1="105" y1="54" x2="109" y2="54" stroke="url(#forjixGrad)" stroke-width="4"/>
+    <line x1="73" y1="100" x2="77" y2="100" stroke="url(#forjixGrad)" stroke-width="4"/>
+    <line x1="59" y1="68" x2="59" y2="86" stroke="url(#forjixGrad)" stroke-width="4"/>
+    <line x1="59" y1="114" x2="59" y2="132" stroke="url(#forjixGrad)" stroke-width="4"/>
+  </g>
+
+  <!-- Spark/forge accent - represents the "forge" in forjix -->
+  <g transform="translate(125, 115)">
+    <path d="M0,25 L8,10 L12,18 L20,0 L14,15 L18,12 L8,35 Z"
+          fill="#f59e0b"
+          opacity="0.9"/>
+  </g>
+
+  <!-- Small connecting dots representing data flow -->
+  <circle cx="141" cy="54" r="3" fill="url(#forjixGrad)" opacity="0.6"/>
+  <circle cx="109" cy="100" r="3" fill="url(#forjixGrad)" opacity="0.6"/>
+</svg>
