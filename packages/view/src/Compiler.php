@@ -80,9 +80,9 @@ class Compiler
     protected function compileStatements(string $value): string
     {
         // Use recursive pattern to handle nested parentheses
-        // Use negative lookbehind to avoid matching email addresses or escaped directives
+        // Only avoid matching escaped directives (@@directive)
         return preg_replace_callback(
-            '/(?<![a-zA-Z0-9_@])@(@?\w+(?:::\w+)?)([ \t]*)(\((?:[^()]*+|(?3))*\))?/',
+            '/(?<!@)@(@?\w+(?:::\w+)?)([ \t]*)(\((?:[^()]*+|(?3))*\))?/',
             fn($match) => $this->compileStatement($match),
             $value
         );
