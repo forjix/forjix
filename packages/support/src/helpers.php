@@ -138,6 +138,48 @@ if (!function_exists('config')) {
     }
 }
 
+if (!function_exists('csrf_token')) {
+    function csrf_token(): string
+    {
+        if (!session_id()) {
+            session_start();
+        }
+
+        if (!isset($_SESSION['_token'])) {
+            $_SESSION['_token'] = bin2hex(random_bytes(32));
+        }
+
+        return $_SESSION['_token'];
+    }
+}
+
+if (!function_exists('old')) {
+    function old(string $key, mixed $default = null): mixed
+    {
+        return $_SESSION['_old_input'][$key] ?? $default;
+    }
+}
+
+if (!function_exists('vite')) {
+    function vite(array|string $entrypoints, ?string $buildDirectory = 'build'): string
+    {
+        $entrypoints = (array) $entrypoints;
+        $output = '';
+
+        foreach ($entrypoints as $entrypoint) {
+            $ext = pathinfo($entrypoint, PATHINFO_EXTENSION);
+
+            if ($ext === 'css' || $ext === 'scss' || $ext === 'sass') {
+                $output .= "<link rel=\"stylesheet\" href=\"/{$buildDirectory}/{$entrypoint}\">\n";
+            } else {
+                $output .= "<script type=\"module\" src=\"/{$buildDirectory}/{$entrypoint}\"></script>\n";
+            }
+        }
+
+        return $output;
+    }
+}
+
 if (!function_exists('blank')) {
     function blank(mixed $value): bool
     {
