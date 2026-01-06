@@ -16,9 +16,9 @@ class Compiler
     protected array $rawBlocks = [];
     protected array $customDirectives = [];
     protected array $conditions = [];
-    protected string $contentTags = ['{{', '}}'];
-    protected string $escapedTags = ['{{{', '}}}'];
-    protected string $rawTags = ['{!!', '!!}'];
+    protected array $contentTags = ['{{', '}}'];
+    protected array $escapedTags = ['{{{', '}}}'];
+    protected array $rawTags = ['{!!', '!!}'];
 
     public function compile(string $value): string
     {
