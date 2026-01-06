@@ -311,11 +311,14 @@ if (!function_exists('now')) {
 if (!function_exists('base_path')) {
     function base_path(string $path = ''): string
     {
-        static $basePath = null;
+        $app = \Forjix\Core\Application::getInstance();
 
-        if ($basePath === null) {
-            $basePath = defined('BASE_PATH') ? BASE_PATH : dirname(__DIR__, 5);
+        if ($app) {
+            return $app->basePath($path);
         }
+
+        // Fallback if Application not yet initialized
+        $basePath = defined('BASE_PATH') ? BASE_PATH : getcwd();
 
         return $basePath . ($path !== '' ? DIRECTORY_SEPARATOR . ltrim($path, DIRECTORY_SEPARATOR) : '');
     }
