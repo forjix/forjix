@@ -1,0 +1,29 @@
+{
+    "name": "forjix/validation",
+    "description": "Forjix Framework validation",
+    "type": "library",
+    "version": "0.1.0",
+    "license": "GPL-3.0-or-later",
+    "require": {
+        "php": "^8.2",
+        "forjix/support": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Forjix\\Validation\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Forjix\\Validation\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.x-dev"
+        }
+    }
+}

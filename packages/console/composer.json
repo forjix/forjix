@@ -1,0 +1,30 @@
+{
+    "name": "forjix/console",
+    "description": "Forjix Framework CLI tools",
+    "type": "library",
+    "version": "0.1.0",
+    "license": "GPL-3.0-or-later",
+    "require": {
+        "php": "^8.2",
+        "forjix/support": "^1.0",
+        "forjix/core": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Forjix\\Console\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Forjix\\Console\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.x-dev"
+        }
+    }
+}
