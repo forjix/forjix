@@ -110,7 +110,7 @@ class Router
 
     protected function addRoute(array $methods, string $uri, array|string|Closure $action): Route
     {
-        $uri = $this->prefix($uri);
+        $uri = $this->applyPrefix($uri);
         $middleware = $this->getGroupMiddleware();
 
         $route = new Route($methods, $uri, $action);
@@ -123,7 +123,7 @@ class Router
         return $route;
     }
 
-    protected function prefix(string $uri): string
+    protected function applyPrefix(string $uri): string
     {
         $prefix = '';
 
