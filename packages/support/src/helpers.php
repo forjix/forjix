@@ -281,3 +281,58 @@ if (!function_exists('now')) {
         return new DateTimeImmutable('now', $timezone ? new DateTimeZone($timezone) : null);
     }
 }
+
+if (!function_exists('base_path')) {
+    function base_path(string $path = ''): string
+    {
+        static $basePath = null;
+
+        if ($basePath === null) {
+            $basePath = defined('BASE_PATH') ? BASE_PATH : dirname(__DIR__, 5);
+        }
+
+        return $basePath . ($path !== '' ? DIRECTORY_SEPARATOR . ltrim($path, DIRECTORY_SEPARATOR) : '');
+    }
+}
+
+if (!function_exists('app_path')) {
+    function app_path(string $path = ''): string
+    {
+        return base_path('app' . ($path !== '' ? DIRECTORY_SEPARATOR . ltrim($path, DIRECTORY_SEPARATOR) : ''));
+    }
+}
+
+if (!function_exists('config_path')) {
+    function config_path(string $path = ''): string
+    {
+        return base_path('config' . ($path !== '' ? DIRECTORY_SEPARATOR . ltrim($path, DIRECTORY_SEPARATOR) : ''));
+    }
+}
+
+if (!function_exists('storage_path')) {
+    function storage_path(string $path = ''): string
+    {
+        return base_path('storage' . ($path !== '' ? DIRECTORY_SEPARATOR . ltrim($path, DIRECTORY_SEPARATOR) : ''));
+    }
+}
+
+if (!function_exists('public_path')) {
+    function public_path(string $path = ''): string
+    {
+        return base_path('public' . ($path !== '' ? DIRECTORY_SEPARATOR . ltrim($path, DIRECTORY_SEPARATOR) : ''));
+    }
+}
+
+if (!function_exists('resource_path')) {
+    function resource_path(string $path = ''): string
+    {
+        return base_path('resources' . ($path !== '' ? DIRECTORY_SEPARATOR . ltrim($path, DIRECTORY_SEPARATOR) : ''));
+    }
+}
+
+if (!function_exists('database_path')) {
+    function database_path(string $path = ''): string
+    {
+        return base_path('database' . ($path !== '' ? DIRECTORY_SEPARATOR . ltrim($path, DIRECTORY_SEPARATOR) : ''));
+    }
+}
