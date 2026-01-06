@@ -23,14 +23,14 @@ class Pipeline
         return $this;
     }
 
-    public function through(array|mixed $pipes): static
+    public function through(mixed $pipes): static
     {
         $this->pipes = is_array($pipes) ? $pipes : func_get_args();
 
         return $this;
     }
 
-    public function pipe(array|mixed $pipes): static
+    public function pipe(mixed $pipes): static
     {
         array_push($this->pipes, ...(is_array($pipes) ? $pipes : func_get_args()));
 
