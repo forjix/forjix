@@ -112,6 +112,32 @@ if (!function_exists('env')) {
     }
 }
 
+if (!function_exists('app')) {
+    function app(?string $abstract = null, array $parameters = []): mixed
+    {
+        $instance = \Forjix\Core\Application::getInstance();
+
+        if ($abstract === null) {
+            return $instance;
+        }
+
+        return $instance->make($abstract, $parameters);
+    }
+}
+
+if (!function_exists('config')) {
+    function config(?string $key = null, mixed $default = null): mixed
+    {
+        $config = app('config');
+
+        if ($key === null) {
+            return $config;
+        }
+
+        return $config->get($key, $default);
+    }
+}
+
 if (!function_exists('blank')) {
     function blank(mixed $value): bool
     {
