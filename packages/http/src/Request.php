@@ -318,6 +318,11 @@ class Request
         return $this->attributes[$key] ?? $default;
     }
 
+    public function getAttribute(string $key, mixed $default = null): mixed
+    {
+        return $this->attribute($key, $default);
+    }
+
     public function setAttribute(string $key, mixed $value): static
     {
         $this->attributes[$key] = $value;
