@@ -276,7 +276,7 @@ if (!function_exists('last')) {
 }
 
 if (!function_exists('now')) {
-    function now(string $timezone = null): DateTimeImmutable
+    function now(?string $timezone = null): DateTimeImmutable
     {
         return new DateTimeImmutable('now', $timezone ? new DateTimeZone($timezone) : null);
     }

@@ -78,8 +78,8 @@ class Pipeline
                 if (is_string($pipe)) {
                     [$name, $parameters] = $this->parsePipeString($pipe);
 
-                    $pipe = $this->container
-                        ? $this->container->get($name)
+                    $pipe = $this->container && method_exists($this->container, 'make')
+                        ? $this->container->make($name)
                         : new $name();
 
                     $parameters = array_merge([$passable, $stack], $parameters);
