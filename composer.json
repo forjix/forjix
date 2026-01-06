@@ -8,6 +8,7 @@
     "prefer-stable": true,
     "require": {
         "php": "^8.2",
+        "psr/container": "^2.0",
         "forjix/support": "self.version",
         "forjix/core": "self.version",
         "forjix/http": "self.version",
