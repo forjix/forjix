@@ -19,7 +19,14 @@
     },
     "autoload": {
         "psr-4": {
-            "Forjix\\": "packages/"
+            "Forjix\\Support\\": "packages/support/src/",
+            "Forjix\\Core\\": "packages/core/src/",
+            "Forjix\\Http\\": "packages/http/src/",
+            "Forjix\\Database\\": "packages/database/src/",
+            "Forjix\\Orm\\": "packages/orm/src/",
+            "Forjix\\View\\": "packages/view/src/",
+            "Forjix\\Console\\": "packages/console/src/",
+            "Forjix\\Validation\\": "packages/validation/src/"
         },
         "files": [
             "packages/support/src/helpers.php"
