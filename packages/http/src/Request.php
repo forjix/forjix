@@ -110,6 +110,16 @@ class Request
         return $path === '' ? '/' : $path;
     }
 
+    public function getUri(): string
+    {
+        return $this->server('REQUEST_URI', '/');
+    }
+
+    public function uri(): string
+    {
+        return $this->getUri();
+    }
+
     public function url(): string
     {
         return rtrim(preg_replace('/\?.*/', '', $this->fullUrl()), '/');
