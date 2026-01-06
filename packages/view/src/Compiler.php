@@ -79,8 +79,9 @@ class Compiler
 
     protected function compileStatements(string $value): string
     {
+        // Use recursive pattern to handle nested parentheses
         return preg_replace_callback(
-            '/\B@(@?\w+(?:::\w+)?)([ \t]*)(\((.*?)\))?/s',
+            '/\B@(@?\w+(?:::\w+)?)([ \t]*)(\((?:[^()]*+|(?3))*\))?/',
             fn($match) => $this->compileStatement($match),
             $value
         );
@@ -95,7 +96,8 @@ class Compiler
             return substr($match[0], 1);
         }
 
-        $expression = $match[4] ?? '';
+        // Extract expression from parentheses (strip outer parens)
+        $expression = isset($match[3]) ? substr($match[3], 1, -1) : '';
 
         return match ($directive) {
             'if' => $this->compileIf($expression),
